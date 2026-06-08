@@ -323,10 +323,10 @@ export default function RutaInclusionApp() {
             <div>
               <div className="fade-up" style={{ marginBottom: 32 }}>
                 <h1 style={{ fontFamily: "DM Serif Display", fontSize: 34, color: C.navy, lineHeight: 1.2 }}>
-                  Bienvenida, Caro 👋
+                  Bienvenido 👋
                 </h1>
                 <p style={{ color: C.gray, marginTop: 8, fontSize: 15 }}>
-                  Sistema de gestión de la Ruta de Inclusión · 3 Periodos · 2025
+                  Sistema de gestión de la Ruta de Inclusión · 3 Periodos · 2026
                 </p>
               </div>
 
@@ -761,7 +761,7 @@ export default function RutaInclusionApp() {
         {/* FOOTER */}
         <footer style={{ background: C.navy, padding: "14px 28px", textAlign: "center" }}>
           <span style={{ color: C.light, fontSize: 12 }}>
-            Ruta de Inclusión · Colegio Santa María Goretty · 2025 · Uso institucional reservado
+            Ruta de Inclusión · Colegio Santa María Goretty · 2026 · Uso institucional reservado
           </span>
         </footer>
       </div>
