@@ -73,25 +73,14 @@ Responde con este JSON exacto:
   "seguimiento": "una acción de seguimiento concreta"
 }`;
 
-  const apiKey = process.env.REACT_APP_ANTHROPIC_KEY;
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
+  const response = await fetch("/api/analizar", {
     method: "POST",
-    headers: { 
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "anthropic-dangerous-direct-browser-access": "true"
-    },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 1000,
-      messages: [{ role: "user", content: prompt }]
-    })
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ descripcion }),
   });
   const data = await response.json();
-  const text = data.content.map(i => i.text || "").join("");
-  const clean = text.replace(/```json|```/g, "").trim();
-  return JSON.parse(clean);
+  if (data.error) throw new Error(data.error);
+  return data;
 }
 
 // ─── ENVIAR A GOOGLE SHEETS ───────────────────────────────────────────────
